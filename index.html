@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slither Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐍 Slither Game</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Length:</span>
+                    <span class="value" id="length">3</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Rank:</span>
+                    <span class="value" id="rank">1</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-overlay" id="gameOverlay">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">Game Over!</h2>
+                    <p id="overlayMessage">You were eaten by a snake</p>
+                    <p class="final-score">Final Score: <span id="finalScore">0</span></p>
+                    <button onclick="restartGame()">Play Again</button>
+                    <button onclick="showLeaderboard()">Leaderboard</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="leaderboard-panel" id="leaderboardPanel">
+            <div class="leaderboard-content">
+                <h2>🏆 Leaderboard</h2>
+                <div class="leaderboard-list" id="leaderboardList"></div>
+                <button onclick="closeLeaderboard()" class="close-btn">Close</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <p>🎮 Use <strong>Mouse</strong> or <strong>Arrow Keys</strong> to move</p>
+            <p>🍎 Eat food and other snakes to grow</p>
+            <p>⚠️ Don't hit the walls or yourself!</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
